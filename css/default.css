@@ -23,7 +23,3 @@ html {
 .clearfix:after {
   clear: both;
 }
-
-.line{
-	font-size: 0;
-}
