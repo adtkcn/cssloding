@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>svg</title>
+    <style>
+      svg {
+        position: relative;
+        width: 100px;
+        height: 100px;
+      }
+      svg circle {
+        stroke-width: 3px;
+        fill: none;
+        stroke: rgb(0, 255, 4);
+        stroke-dasharray: 252;
+        stroke-dashoffset: 0;
+        animation: dash 2s linear infinite, rotate 2s linear infinite;
+        transform-origin: center center;
+      }
+
+      @keyframes dash {
+        0%,
+        100% {
+          stroke-dashoffset: 252;
+          /* stroke-dasharray: 126; */
+        }
+        50% {
+          stroke-dashoffset: 504;
+        }
+        50.001% {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 40*2*3.14159=251.32 -->
+    <svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" />
+    </svg>
+  </body>
+</html>
