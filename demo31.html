@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>svg</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #e76718;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
       svg {
         position: relative;
         width: 100px;
         height: 100px;
+        margin: auto;
       }
       svg circle {
         stroke-width: 3px;
         fill: none;
         stroke: rgb(0, 255, 4);
         stroke-dasharray: 252;
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 252;
         animation: dash 2s linear infinite, rotate 2s linear infinite;
         transform-origin: center center;
       }
@@ -29,11 +41,8 @@
           stroke-dashoffset: 0;
         }
         50.001% {
-          stroke-dashoffset: 504;
+          stroke-dashoffset: 502;
         }
-        /* 75% {
-          stroke-dashoffset: 0;
-        } */
       }
       @keyframes rotate {
         0% {
